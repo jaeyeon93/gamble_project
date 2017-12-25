@@ -9,6 +9,15 @@ var banker = [4,3];
 var sum_player = 0
 var sum_banker = 0
 
+var receive_the_card = function(n) {
+  var player = [];
+  for (var i = 0; i < n; i++){
+    player.push(cards[Math.floor(Math.random()*3)][Math.floor(Math.random()*12)])
+  }
+  console.log(player);
+  console.log(cards);
+}
+receive_the_card(2);
 
 var check_the_natural = function (player, banker) {
   for (var i of player) {
@@ -18,7 +27,6 @@ var check_the_natural = function (player, banker) {
       console.log("sum of player is %d, Natural", sum_player);
     }
   }
-  console.log("=============")
   for (var j of banker) {
     sum_banker += j;
     //console.log("first sum_banker is %d i is %d", sum_banker, j);
