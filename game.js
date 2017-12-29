@@ -10,7 +10,7 @@ function Deck() {
   this.cardsDrawn = 0;
   var shapes = ['spades', 'diamonds','hearts','clubs'];
   var numbers = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"];
-  for (var shape in shapes) {
+  for (var shape of shapes) {
     for (var number of numbers) {
       this.cards.push(new Card(numbers[number],shapes[shape]));
     }
@@ -22,7 +22,6 @@ Deck.prototype.getCard = function () {
     return null;
     // 아직 카드 안받을때
   }
-
   var random = Math.floor(Math.random() * (this.cards.length - this.cardsDrawn));
   var temp = this.cards[random];
 
@@ -57,4 +56,5 @@ Player.prototype.addCard = function () {
 };
 
 var deck = new Deck();
+var card = new Card();
 console.log(deck);
